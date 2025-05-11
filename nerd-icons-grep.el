@@ -40,7 +40,9 @@
                (heading (string-trim (buffer-substring-no-properties start end))))
           (save-excursion
             (goto-char start)
-            (insert-before-markers "\n" (nerd-icons-icon-for-file heading) " "))
+            (remove-text-properties (pos-bol) (pos-eol) '(outline-level))
+            (insert-before-markers "\n" (nerd-icons-icon-for-file heading) " ")
+            (add-text-properties (pos-bol) (pos-eol) '(outline-level 1)))
           (setf (cdr nerd-icons-grep--state) (prop-match-end prop)))))))
 
 (advice-add 'grep--heading-filter :after #'nerd-icons-grep--heading-filter)

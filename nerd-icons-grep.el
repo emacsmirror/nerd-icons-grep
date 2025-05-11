@@ -56,7 +56,12 @@
         (insert-file-contents "test.txt")
         (goto-char (point-max))
         (grep--heading-filter)
-        (goto-char (point-min))))))
+        (goto-char (point-min))))
+    ;; Checks
+    (save-excursion
+      (goto-char (point-min))
+      (should (eq (search-forward " nerd-icons-grep.el" nil t) 22))
+      (should (eq (search-forward " ipsum.c" nil t) 99)))))
 
 (provide 'nerd-icons-grep)
 ;;; nerd-icons-grep.el ends here

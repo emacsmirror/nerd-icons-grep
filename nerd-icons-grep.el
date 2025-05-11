@@ -8,7 +8,7 @@
 ;; Modified: May 07, 2025
 ;; Version: 0.0.1
 ;; Keywords: tools, grep, nerd-icons
-;; Homepage: https://github.com/hron/nerd-icons-grep-mode
+;; Homepage: https://github.com/hron/nerd-icons-grep
 ;; Package-Requires: ((emacs "30.1"))
 ;;
 ;; This file is not part of GNU Emacs.

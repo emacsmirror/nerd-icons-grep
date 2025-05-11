@@ -47,21 +47,5 @@
 
 (advice-add 'grep--heading-filter :after #'nerd-icons-grep--heading-filter)
 
-(ert-deftest nerd-icons-grep--show-icons ()
-  (with-current-buffer-window "*nerd-icons-grep-test*" nil nil
-    ;; Setup a buffer and run grep--heading-filter inside it
-    (grep-mode)
-    (let ((inhibit-read-only t))
-      (dlet ((compilation-filter-start (point)))
-        (insert-file-contents "test.txt")
-        (goto-char (point-max))
-        (grep--heading-filter)
-        (goto-char (point-min))))
-    ;; Checks
-    (save-excursion
-      (goto-char (point-min))
-      (should (eq (search-forward " nerd-icons-grep.el" nil t) 22))
-      (should (eq (search-forward " ipsum.c" nil t) 99)))))
-
 (provide 'nerd-icons-grep)
 ;;; nerd-icons-grep.el ends here

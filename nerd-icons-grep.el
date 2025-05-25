@@ -28,7 +28,7 @@
 
 ;;; Commentary:
 
-;; Add nerd-icons to grep-mode buffers when `grep-use-headings' is `t'
+;; Add nerd-icons to `grep-mode' buffers when `grep-use-headings' is t
 
 ;;; Code:
 
@@ -58,7 +58,13 @@
             (add-text-properties (pos-bol) (pos-eol) '(outline-level 1)))
           (setf (cdr nerd-icons-grep--state) (prop-match-end prop)))))))
 
-(advice-add 'grep--heading-filter :after #'nerd-icons-grep--heading-filter)
+;;;###autoload
+(define-minor-mode nerd-icons-grep-mode
+  "Adds nerd-icons to `grep-mode' buffers when `grep-use-headings' is t."
+  :global t
+  (if nerd-icons-grep-mode
+      (advice-add 'grep--heading-filter :after #'nerd-icons-grep--heading-filter)
+    (advice-remove 'grep--heading-filter #'nerd-icons-grep--heading-filter)))
 
 (provide 'nerd-icons-grep)
 ;;; nerd-icons-grep.el ends here

@@ -35,6 +35,12 @@
 (require 'nerd-icons)
 (require 'grep)
 
+(defgroup nerd-icons-grep nil
+  "Manage how nerd-icons-grep-mode settings."
+  :prefix "nerd-icons-grep-"
+  :group 'grep
+  :link '(emacs-commentary-link :tag "Commentary" "nerd-icons-grep.el"))
+
 (defvar-local nerd-icons-grep--state nil
   "Variable to keep track of the `nerd-icons-grep--heading-filter' state.")
 

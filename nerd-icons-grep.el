@@ -53,7 +53,7 @@
           prop)
       ;; Move point to the old limit and update limit marker.
       (move-marker limit (prog1 (pos-bol) (goto-char limit)))
-      (while (setq prop (text-property-search-forward 'compilation-annotation))
+      (while (setq prop (text-property-search-forward 'font-lock-face 'grep-heading t))
         (let* ((start (prop-match-beginning prop))
                (end (prop-match-end prop))
                (heading (string-trim (buffer-substring-no-properties start end))))

@@ -36,7 +36,7 @@
 (require 'grep)
 
 (defgroup nerd-icons-grep nil
-  "Manage how nerd-icons-grep-mode settings."
+  "Manage nerd-icons-grep settings."
   :prefix "nerd-icons-grep-"
   :group 'grep
   :link '(emacs-commentary-link :tag "Commentary" "nerd-icons-grep.el"))

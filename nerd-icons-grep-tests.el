@@ -32,8 +32,8 @@
     ;; Checks
     (save-excursion
       (goto-char (point-min))
-      (should (eq (search-forward " nerd-icons-grep.el" nil t) 22))
-      (should (eq (search-forward " ipsum.c" nil t) 99)))))
+      (should (eq (search-forward " nerd-icons-grep.el" nil t) 21))
+      (should (eq (search-forward " ipsum.c" nil t) 97)))))
 
 (provide 'nerd-icons-grep-tests)
 ;;; nerd-icons-grep-tests.el ends here

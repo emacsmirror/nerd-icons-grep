@@ -60,7 +60,7 @@
           (save-excursion
             (goto-char start)
             (remove-text-properties (pos-bol) (pos-eol) '(outline-level))
-            (insert-before-markers "\n" (nerd-icons-icon-for-file heading) " ")
+            (insert-before-markers (nerd-icons-icon-for-file heading) " ")
             (add-text-properties (pos-bol) (pos-eol) '(outline-level 1)))
           (setf (cdr nerd-icons-grep--state) (prop-match-end prop)))))))
 
